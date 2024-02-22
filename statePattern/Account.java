@@ -27,13 +27,13 @@ public class Account {
     }
 
     public void deposit(Double depositAmount){
-        balance = balance + depositAmount;
+        //balance = balance + depositAmount;
         //call toString
         System.out.println(toString());
     }
 
     public void withdraw(Double withdrawAmount){
-        balance = balance - withdrawAmount;
+        //balance = balance - withdrawAmount;
         //call toString
         System.out.println(toString());
     }
@@ -57,6 +57,6 @@ public class Account {
 
     @Override
     public String toString(){
-        return "Account Number: " + accountNumber + "\nCurrent balance: " + String.valueOf(balance);
+        return "Account Number: " + accountNumber + "\nCurrent balance: " + String.valueOf(this.getBalance());
     }
 }
