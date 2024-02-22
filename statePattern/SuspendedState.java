@@ -2,13 +2,13 @@ package statePattern;
 public class SuspendedState implements AccountState {
 
     @Override
-    public void deposit(Account account) {
-        account.toString();
+    public void deposit(Account account, double depositAmount) {
+        System.out.println("Cannot deposit with a suspended account!");
     }
 
     @Override
-    public void withdraw(Account account) {
-        account.toString();
+    public void withdraw(Account account, double withdrawAmount) {
+        System.out.println("Cannot withdraw with a suspended account!");
     }
 
     @Override

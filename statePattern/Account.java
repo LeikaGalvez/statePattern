@@ -10,6 +10,14 @@ public class Account {
         this.accountState = new ActiveState();
     }
 
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
     public AccountState getAccountState() {
         return accountState;
     }
@@ -30,16 +38,21 @@ public class Account {
         System.out.println(toString());
     }
 
-    public void activate(){
+    public void activate(){        
         accountState.activate(this);
+        this.accountState = new ActiveState();
     }
 
-    public void suspend(){
+    public void suspend(){ 
         accountState.suspend(this);
+        this.accountState = new SuspendedState();
+      
     }
 
     public void close(){
-        accountState.close(this);
+       accountState.close(this);
+       this.accountState = new ClosedState();
+       
     }
 
     @Override

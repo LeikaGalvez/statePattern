@@ -2,12 +2,12 @@ package statePattern;
 public class ClosedState implements AccountState {
     
     @Override
-    public void deposit(Account account) {
+    public void deposit(Account account, double depositAmount) {
         System.out.println("You cannot deposit on a closed account!");
     }
 
     @Override
-    public void withdraw(Account account) {
+    public void withdraw(Account account, double depositAmount) {
         System.out.println("You cannot withdraw on a closed account!");
     }
 
