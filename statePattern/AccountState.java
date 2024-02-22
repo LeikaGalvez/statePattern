@@ -1,3 +1,4 @@
+package statePattern;
 public interface AccountState {
 
     void deposit(Account account);

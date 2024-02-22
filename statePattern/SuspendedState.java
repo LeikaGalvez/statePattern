@@ -1,4 +1,5 @@
-public class ActiveState implements AccountState {
+package statePattern;
+public class SuspendedState implements AccountState {
 
     @Override
     public void deposit(Account account) {
@@ -12,13 +13,13 @@ public class ActiveState implements AccountState {
 
     @Override
     public void activate(Account account) {
-        System.out.println("Account is already activated!");
+        account.setAccountState(new ActiveState());
+        System.out.println("Account is activated!");
     }
 
     @Override
     public void suspend(Account account) {
-        account.setAccountState(new SuspendedState());
-        System.out.println("Account is suspended!");
+        System.out.println("Account is already suspended!");
     }
 
     @Override

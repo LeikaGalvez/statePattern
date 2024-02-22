@@ -1,11 +1,13 @@
+package statePattern;
 public class Account {
     private String accountNumber;
-    private Double balance;
+    private double balance;
     private AccountState accountState;
 
-    public Account(String accountNumber, Double balance) {
+    public Account(String accountNumber, double balance) {
         this.accountNumber = accountNumber;
         this.balance = balance;
+        this.accountState = new ActiveState();
     }
 
     public AccountState getAccountState() {
@@ -29,20 +31,18 @@ public class Account {
     }
 
     public void activate(){
-        accountState = new ActiveState();
         accountState.activate(this);
     }
 
     public void suspend(){
-        accountState = new SuspendedState();
         accountState.suspend(this);
     }
 
     public void close(){
-        accountState = new ClosedState();
         accountState.close(this);
     }
 
+    @Override
     public String toString(){
         return "Account Number: " + accountNumber + "\nCurrent balance: " + String.valueOf(balance);
     }
