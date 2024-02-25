@@ -27,32 +27,25 @@ public class Account {
     }
 
     public void deposit(Double depositAmount){
-        //balance = balance + depositAmount;
-        //call toString
+        accountState.deposit(this, depositAmount);
         System.out.println(toString());
     }
 
     public void withdraw(Double withdrawAmount){
-        //balance = balance - withdrawAmount;
-        //call toString
+        accountState.withdraw(this, withdrawAmount);
         System.out.println(toString());
     }
 
     public void activate(){        
         accountState.activate(this);
-        this.accountState = new ActiveState();
     }
 
     public void suspend(){ 
         accountState.suspend(this);
-        this.accountState = new SuspendedState();
-      
     }
 
     public void close(){
        accountState.close(this);
-       this.accountState = new ClosedState();
-       
     }
 
     @Override

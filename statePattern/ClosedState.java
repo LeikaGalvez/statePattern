@@ -25,7 +25,5 @@ public class ClosedState implements AccountState {
     public void close(Account account) {
         System.out.println("Account is already closed!");
     }
-
-    
     
 }
