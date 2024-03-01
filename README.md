@@ -13,7 +13,8 @@ Implement the State pattern to improve code maintainability and flexibility:
 
 *Define Account States*: Create separate classes representing different account states: ActiveState, SuspendedState, and ClosedState.
 
-*Implement State Interface*: Define an interface AccountState with methods for common actions like deposit, withdraw, activate, suspend, and close.
+*Implement State Interface*: Define an interface AccountState with methods for common actions like deposit, withdraw, activate, suspend, and close. 
+
 *Implement State Behaviors*: Each concrete state class implements the AccountState interface, providing specific behavior for its respective state. For example, the ActiveState class would allow deposits and withdrawals, while the ClosedState wouldn't allow any transactions.
 # 
 #### Update Account Class:
@@ -92,3 +93,4 @@ public class AccountTest() {
 ````
 #
 # UML Diagram
+![statePattern_UML (3)](https://github.com/LeikaGalvez/statePattern/assets/142652629/d3ad020d-c20a-4c78-9d38-d8e859620fc9)
